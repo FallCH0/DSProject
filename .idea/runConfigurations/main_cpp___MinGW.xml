@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="main.cpp - MinGW" type="CppFileRunConfiguration" factoryName="CppFileRunConfiguration" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="DSProject" TARGET_NAME="main.cpp - MinGW" CONFIG_NAME="main.cpp - MinGW">
+    <option name="sourceFile" value="C:\Users\16219\Desktop\DSProject\main.cpp" />
+    <option name="toolchainName" value="MinGW" />
+    <method v="2">
+      <option name="com.jetbrains.cidr.cpp.runfile.CppFileBuildBeforeRunTaskProvider$BasicBuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>
