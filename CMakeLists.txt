@@ -3,4 +3,5 @@ project(DSProject)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(DSProject main.cpp)
+add_executable(DSProject main.cpp
+        graph.h)
