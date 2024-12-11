@@ -96,7 +96,18 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				6
 			]
 		}
 	],
@@ -112,6 +123,31 @@
 			"backtrace" : 1,
 			"path" : "graph.h",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "edge.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "vertexIterator.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "arrayWGraph.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "node.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "arrayWGraph_basic.tpp",
+			"sourceGroupIndex" : 2
 		}
 	],
 	"type" : "EXECUTABLE"
