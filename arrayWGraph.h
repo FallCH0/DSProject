@@ -16,6 +16,7 @@
 #include "edge.h"
 #include "node.h"
 #include "vertexIterator.h"
+#include <queue>
 template<class T>
 class arrayWGraph :public graph<T>{
     ///图的基础数据结构
@@ -28,7 +29,7 @@ class arrayWGraph :public graph<T>{
     };//用邻接数组的方式存储连接关系（node中含有连向本节点边的权值属性）
     vector<Vertex> tables;//邻接表
     vector<NodeInfo> vs_inf;//存储节点信息
-
+    //确保info中的索引与tables中的一样
 
 
     /// arrayWGraph基础，包含基类函数、迭代器和实用子方法（实现于arrayWGraph_basic.tpp）
@@ -47,9 +48,12 @@ class arrayWGraph :public graph<T>{
 
 
 
-
     ///一些其他函数
     int getIndex(int x); // 获取编号为x的点的索引
+    bool isnoerrorsingleconnect();//检测有无异常单向连接（邻接数组只存了一边）
+    void insertEdgeSingle(int v1_id, int v2_id,T w);//单边插入（为正常插入做准备）
+    void eraseEdgeSingle(int v1_id, int v2_id);//单边删除，作用同上
+
 };
 
 

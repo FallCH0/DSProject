@@ -39,10 +39,10 @@ public:
     int degree; // 该点的度
     string name; // 含义
 
-    NodeInfo(int nodeinfo_id = 0, string nodeinfo_name = "", int nodeinfo_in_degree = 0 ){
+    NodeInfo(int nodeinfo_id = 0, string nodeinfo_name = "", int nodeinfo_degree = 0 ){
         name = std::move(nodeinfo_name); // 使用移动语义优化
         node_id = nodeinfo_id;
-        degree = nodeinfo_in_degree;
+        degree = nodeinfo_degree;
     }
 };
 
