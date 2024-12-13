@@ -12,6 +12,8 @@
 #include <sstream>
 #include <iostream>
 #include <limits>
+#include <set>
+#include <unordered_map>
 #include "graph.h"
 #include "edge.h"
 #include "node.h"
@@ -53,6 +55,14 @@ class arrayWGraph :public graph<T>{
     bool isnoerrorsingleconnect();//检测有无异常单向连接（邻接数组只存了一边）
     void insertEdgeSingle(int v1_id, int v2_id,T w);//单边插入（为正常插入做准备）
     void eraseEdgeSingle(int v1_id, int v2_id);//单边删除，作用同上
+    bool SingleVertexDFSforCycle(int v_id,set<int> vi, unordered_map<int,int> p);//单点dfs搜索环
+    vector<set<int>> connectedSets(); // 输出连通集
+    void addVertex();//增加节点
+    void deleteVertex(int v_id);//删除节点
+    ///其他需要的属性
+    T *vis;//访问表
+    T *p;
+
 
 };
 
