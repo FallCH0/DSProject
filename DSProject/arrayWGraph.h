@@ -22,7 +22,7 @@
 template<class T>
 class arrayWGraph :public graph<T>{
     ///图的基础数据结构
-    protected:
+    public:
     int v_num;
     int e_num;
     struct Vertex {
@@ -33,7 +33,7 @@ class arrayWGraph :public graph<T>{
     vector<NodeInfo> vs_inf;//存储节点信息
     //确保info中的索引与tables中的一样
 
-    public:
+
     /// arrayWGraph基础，包含基类函数、迭代器和实用子方法（实现于arrayWGraph_basic.tpp）
     // 基类函数实现
      arrayWGraph();

@@ -26,23 +26,22 @@ int main(int argc, char *argv[])
     db=QSqlDatabase::addDatabase("QSQLITE");
     string path="./"+map_name+".db";
     QString Qpath=QString::fromStdString(path);
-    db.setDatabaseName("C:/Users/16219/Desktop/testdb/identifier.db");
+    db.setDatabaseName("C:/Users/16219/Desktop/dbtest/dbtest.db");
     QSqlQuery sql_query(db); //sql语句对象与具体的db对象关联
-    sql_query.exec("select COUNT(*) from NodeInfodb");
-    int n_num;
-    while (sql_query.next()) //逐行检索
-    {
-        n_num=sql_query.value(0).toInt();
-    }
+    db.open();
     arrayWGraph<int> *arr=new arrayWGraph<int>();
     QString select_all_nodeinfo="select * from NodeInfodb";//查询表NodeInfodb所有内容
     sql_query.exec(select_all_nodeinfo);//执行命令
     while (sql_query.next()) //逐行检索
     {
         int id=sql_query.value(0).toInt();
+        qDebug()<<id;
         QString name=sql_query.value(1).toString();
+        qDebug()<<name;
         int x=sql_query.value(2).toInt();
+        qDebug()<<x;
         int y=sql_query.value(3).toInt();
+        qDebug()<<y;
         NodeInfo newNode(id,name.toStdString(),x,y);
         arr->addVertex(newNode);
     }
@@ -59,11 +58,8 @@ int main(int argc, char *argv[])
         arr->insertEdge(newEdge);
         }
     }
-
-
-
-
     MainWindow w;
     w.show();
+    w.DrawVertexs(arr->vs_inf);
     return a.exec();
 }
