@@ -27,6 +27,222 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QTabWidget" name="Opreate">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>20</y>
+      <width>271</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="calculate">
+     <attribute name="title">
+      <string>计算</string>
+     </attribute>
+     <widget class="QTabWidget" name="calculatex">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>271</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="edit">
+     <attribute name="title">
+      <string>编辑</string>
+     </attribute>
+     <widget class="QTabWidget" name="editx">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>271</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="vertex">
+       <attribute name="title">
+        <string>点</string>
+       </attribute>
+       <widget class="QTabWidget" name="addv">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>271</width>
+          <height>501</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <widget class="QWidget" name="addv">
+         <attribute name="title">
+          <string>添加点</string>
+         </attribute>
+         <widget class="QLineEdit" name="addv_name">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>80</y>
+            <width>161</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="maxLength">
+           <number>30</number>
+          </property>
+          <property name="placeholderText">
+           <string>请输入文字信息</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="addv_x">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>180</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="addv_y">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>180</y>
+            <width>71</width>
+            <height>31</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>30</y>
+            <width>131</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>点的文字信息</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_2">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>140</y>
+            <width>51</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>x</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>170</x>
+            <y>130</y>
+            <width>40</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>y</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushaddv">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>250</y>
+            <width>121</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>确定</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="erav">
+         <attribute name="title">
+          <string>删除点</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="editv">
+         <attribute name="title">
+          <string>修改点的信息</string>
+         </attribute>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="edge">
+       <attribute name="title">
+        <string>边</string>
+       </attribute>
+       <widget class="QTabWidget" name="tabWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>271</width>
+          <height>501</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="adde">
+         <attribute name="title">
+          <string>增加边</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="erae">
+         <attribute name="title">
+          <string>删除边</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="edite">
+         <attribute name="title">
+          <string>修改边的权值</string>
+         </attribute>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

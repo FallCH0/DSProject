@@ -59,6 +59,7 @@ class arrayWGraph :public graph<T>{
     vector<set<int>> connectedSets(); // 输出连通集
     void addVertex(NodeInfo N);//增加节点
     void deleteVertex(int v_id);//删除节点
+    int giveid();//分配新节点的id
     ///其他需要的属性
     set<int> *vis0;//访问表
     int *vis1;
@@ -275,10 +276,21 @@ void arrayWGraph<T>::addVertex(NodeInfo N) {
     v_num++;
     // 为存储节点信息的向量添加新元素，初始化其度等信息
     vs_inf.push_back(N);
-    // 为邻接表添加新的顶点结构，初始化其连接向量为空
-    tables.push_back(Vertex());
+    Vertex v;
+    v.node_id=N.node_id;
+    tables.push_back(v);
 }
-
+template<class T>
+int arrayWGraph<T>::giveid(){
+    int max=0;
+    for(int i=0;i<vs_inf.size();i++){
+        int a=vs_inf[i].node_id;
+        if(max<a){
+            a=max;
+        }
+    }
+    return max+1;
+}
 template<class T>
 void arrayWGraph<T>::deleteVertex(int v_id) {
     // 先获取要删除节点的索引
