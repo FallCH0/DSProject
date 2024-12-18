@@ -4,10 +4,10 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    drawcode=0;
     arr=new arrayWGraph<int>();
     ui->setupUi(this);
     dp=ui->DrawPlace;
+    drawcode=0;
     dp->setStyleSheet("background-color:white");
     QIntValidator *validator = new QIntValidator(1, 9999, this);
     ui->addv_x->setValidator(validator);
@@ -18,6 +18,45 @@ MainWindow::MainWindow(QWidget *parent)
     // 获取子窗口中的按钮（通过名称获取）
     QPushButton *addvp = opr->findChild<QPushButton *>("pushaddv"); // 使用 Qt Designer 中的对象名称
     connect(addvp, &QPushButton::clicked, this, &MainWindow::addvpushClick);
+
+    QPushButton *eravp_sel = opr->findChild<QPushButton *>("pusherav_sel"); // 使用 Qt Designer 中的对象名称
+    connect(eravp_sel, &QPushButton::clicked, this, &MainWindow::on_pusherav_sel_clicked);
+
+    string map_name="test";
+    QSqlDatabase db;
+    db=QSqlDatabase::addDatabase("QSQLITE");
+    string path="./"+map_name+".db";
+    QString Qpath=QString::fromStdString(path);
+    db.setDatabaseName("C:/Users/16219/Desktop/dbtest/dbtest.db");
+    QSqlQuery sql_query(db); //sql语句对象与具体的db对象关联
+    db.open();
+    QString select_all_nodeinfo="select * from NodeInfodb";//查询表NodeInfodb所有内容
+    sql_query.exec(select_all_nodeinfo);//执行命令
+
+    while (sql_query.next()) //逐行检索
+    {
+        int id=sql_query.value(0).toInt()-1;
+        QString name=sql_query.value(1).toString();
+        int x=sql_query.value(2).toInt();
+        int y=sql_query.value(3).toInt();
+        NodeInfo newNode(id,name.toStdString(),x,y);
+        arr->addVertex(newNode);
+        ui->eravsel->addItem(name);
+    }
+    QString select_all_edge="select * from Edgedb";//查询表NodeInfodb所有内容
+    sql_query.exec(select_all_edge);//执行命令
+    while (sql_query.next()) //逐行检索
+    {
+        int v1_id=sql_query.value(0).toInt()-1;
+        int v2_id=sql_query.value(1).toInt()-1;
+        int wx=sql_query.value(2).toInt();
+        edge<int> *newEdge=new edge<int>(v1_id,v2_id,wx);
+        arr->insertEdge(newEdge);
+        linshibian=newEdge;
+        drawcode=1;
+        update();
+    }
+
 
 }
 void MainWindow::DrawVertex(int x,int y,string name,int id){
@@ -112,5 +151,11 @@ void MainWindow::addvpushClick()
         arr->addVertex(*newnode);
         DrawVertex(x,y,name,id);
     }
+}
+
+
+void MainWindow::on_pusherav_sel_clicked()
+{
+
 }
 

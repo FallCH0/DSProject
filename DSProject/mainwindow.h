@@ -7,6 +7,7 @@
 #include<QTabWidget>
 #include<arrayWGraph.h>
 #include<QPainter>
+#include<QtSql>
 #include<QPushButton>
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -36,5 +37,6 @@ public:
 private slots:
     void addvpushClick();
 
+    void on_pusherav_sel_clicked();
 };
 #endif // MAINWINDOW_H

@@ -81,7 +81,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="vertex">
        <attribute name="title">
@@ -97,7 +97,7 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="addv">
          <attribute name="title">
@@ -199,6 +199,87 @@
          <attribute name="title">
           <string>删除点</string>
          </attribute>
+         <widget class="QComboBox" name="eravsel">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>50</y>
+            <width>171</width>
+            <height>22</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>100</x>
+            <y>15</y>
+            <width>61</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>选择点</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pusherav_sel">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>90</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>确定</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>80</x>
+            <y>140</y>
+            <width>101</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>或查找点</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="eravser">
+          <property name="geometry">
+           <rect>
+            <x>50</x>
+            <y>190</y>
+            <width>171</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="placeholderText">
+           <string>请输入点的文字信息</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pusherav_ser">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>250</y>
+            <width>91</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>确定</string>
+          </property>
+         </widget>
         </widget>
         <widget class="QWidget" name="editv">
          <attribute name="title">
